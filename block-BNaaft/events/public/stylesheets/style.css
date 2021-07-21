@@ -179,7 +179,7 @@ a {
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(78, 4, 161, 0.8);
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -233,7 +233,7 @@ header .logo {
 }
 
 footer .contact {
-  background-color: #23347b;
+  background-color: #8853ce;
 }
 
 footer .contact .footer-logo {
@@ -271,12 +271,12 @@ footer .contact i:hover {
 
 footer .copy-right {
   padding: 1rem;
-  background: #102169;
+  background: #9258d4e5;
   text-align: center;
 }
 
 footer .copy-right small {
-  color: #8E92A8;
+  color: #121213;
 }
 
 .edit-comment-hero form label {

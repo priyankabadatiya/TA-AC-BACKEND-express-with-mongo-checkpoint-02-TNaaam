@@ -18,8 +18,8 @@
         <a href="/" class="logo">Event House</a>
         <nav>
           <ul class="flex">
-            <li><a href="/events/home">Home</a></li>
-            <li><a href="">About</a></li>
+            <!-- <li><a href="/events/home">Home</a></li> -->
+           
             <li><a href="/events/new">Add Event</a></li>
             <li><a href="/events">Event List</a></li>
           </ul>
@@ -46,15 +46,14 @@
               </form>
             </div>
             <div class="main-events-sec grid grid-template-col-2">
-                
-              <% data.forEach(element=> { %>
+              <% allData.forEach(el=> { %>
                 <div class="card">
-                    <h3><%= element.title%> </h3>
-                    <p><%= element.summary.substr(0, 30)%> ....</p>
-                    <p><i class="fas fa-map-marker-alt"></i> <%= element.location %></p>
-                    <p>starting date is <%= dateFormate(element.start_date)  %> </p>
-                    <p>starting date is <%=  dateFormate(element.end_date)  %> </p>
-                    <a href="/events/<%= element._id%>">show more</a>
+                    <h3><%= el.title%> </h3>
+                    <p><%= el.summary.substr(0, 30)%> ....</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <%= el.location %></p>
+                    <p>starting date is <%= dateFormate(el.start_date)  %> </p>
+                    <p>starting date is <%=  dateFormate(el.end_date)  %> </p>
+                    <a href="/events/<%= el._id%>">show more</a>
                 </div>
               <%}) %>
             </div>
@@ -94,7 +93,7 @@
         </div>
       </section>
       <div class="copy-right">
-        <small>&copy;AltCampus Services Pvt Ltd, 2018-present</small>
+        <small>&copy;AltCampus Services Pvt Ltd, 2021-present</small>
       </div>
     </footer>
   </body>

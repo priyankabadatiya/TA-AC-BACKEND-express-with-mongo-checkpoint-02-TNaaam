@@ -31,14 +31,14 @@
           <div class="container">
               <article>
                   <h2 class="secondary-heading">
-                      <%= data.title %>
+                      <%= singleEvent.title %>
                   </h2>
-                  <p><%= data.summary %></p>
+                  <p><%= singleEvent.summary %></p>
                   <div>
                       <h3 class="ternary-heading">
                           Host Name
                       </h3>
-                      <p><%= data.host %></p>
+                      <p><%= singleEvent.host %></p>
                   </div>
                  
      
@@ -47,32 +47,32 @@
                     <h3 class="ternary-heading">
                         categories
                     </h3>
-                    <% data.categories.forEach(elem=> { %>
+                    <% singleEvent.categories.forEach(elem=> { %>
                         <p><%= elem%></p>
                    <% }) %>
                 </div>
                 <div>
                     <h3 class="ternary-heading">Likes</h3>
-                    <p><%= data.likes %></p>
-                    <a href="/events/<%= data._id%>/likes" class="like"><i class="far fa-thumbs-up"></i></a>
-                    <a href="/events/<%= data._id%>/dislikes" class="like"><i class="far fa-thumbs-down"></i></a>
+                    <p><%= singleEvent.likes %></p>
+                    <a href="/events/<%= singleEvent._id%>/likes" class="like"><i class="far fa-thumbs-up"></i></a>
+                    <a href="/events/<%= singleEvent._id%>/dislikes" class="like"><i class="far fa-thumbs-down"></i></a>
                 </div>
               </article>
-              <a href="/events/<%= data._id %>/edit" class="btn">edit</a>
-              <a href="/events/<%= data._id %>/delete" class="btn">Delete</a> 
+              <a href="/events/<%= singleEvent._id %>/edit" class="btn">edit</a>
+              <a href="/events/<%= singleEvent._id %>/delete" class="btn">Delete</a> 
           </div>
       </section>
       <section class="padding comment-sec"> 
           <div class="container">
               <h2 class="secondary-heading">comments</h2>
-            <form action="/events/<%=data._id%>/remarks" method="POST">
+            <form action="/events/<%=singleEvent._id%>/remarks" method="POST">
                 <input type="text" name="title" placeholder="enter the comment" class="form-control">
                 <input type="text" name="author" placeholder="enter the name" class="form-control">
                 <button type="submit" class="btn">add comment</button>
             </form>
         
               <div class="comment-content">
-                <% data.remarks.forEach(element=> { %>
+                <% singleEvent.remarks.forEach(element=> { %>
                     <div class="comment-card flex justify-between-flex align-center">
                         <div class="">
                             <h4><%= element.name%></h4>
@@ -126,7 +126,7 @@
         </div>
       </section>
       <div class="copy-right">
-        <small>&copy;AltCampus Services Pvt Ltd, 2018-present</small>
+        <small>&copy;AltCampus Services Pvt Ltd, 2021-present</small>
       </div>
     </footer>
   </body>
