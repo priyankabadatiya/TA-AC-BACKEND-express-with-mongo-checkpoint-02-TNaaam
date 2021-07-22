@@ -220,7 +220,7 @@ header .logo {
 
 .btn {
   padding: 1rem 2rem;
-  background-color: #02324e;
+  background-color: #4a1ddf;
   display: inline-block;
   margin-top: 1.5rem;
   border-radius: 0.4rem;
@@ -327,7 +327,7 @@ footer .copy-right small {
 }
 
 .events aside {
-  background: #2a293e;
+  background: #544cec;
   border-radius: 0.25rem;
   padding: 1rem;
 }

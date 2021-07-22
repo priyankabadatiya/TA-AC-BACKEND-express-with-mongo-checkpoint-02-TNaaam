@@ -42,7 +42,7 @@ router.get('/:id/edit', (req, res, next) => {
     let id = req.params.id;
     Event.findById(id, (err, event) => {
         if (err) next(err);
-        res.render('eventEditForm', { event: event })
+        res.render('eventEditForm', { data : event })
     })
 });
 
@@ -50,7 +50,6 @@ router.get('/:id/edit', (req, res, next) => {
 //update event
 router.post('/:id/edit', (req, res, next) => {
     let id = req.params.id;
-    // req.body.categories = req.body.categories.trim().split(" ");
     Event.findByIdAndUpdate(id, req.body, (err, event) => {
         if (err) return next(err);
         res.redirect('/events/' + id);
@@ -70,7 +69,6 @@ router.get('/:id/delete', (req, res, next) => {
 });
 
 // increment
-
 router.get('/:id/likes', (req, res, next) => {
     let id = req.params.id;
     console.log(req);
@@ -89,15 +87,13 @@ router.get('/:id/dislikes', (req, res, next) => {
 });
 
 // create comment
-
 router.post('/:id/remarks', (req, res, next) => {
     req.body.events = req.params.id;
+
     console.log(req.body)
     Remark.create(req.body, (err, comment) => {
         if (err) return next(err)
-        Event.findByIdAndUpdate(
-            req.params.id,
-            { $push: { remarks: comment._id } },
+        Event.findByIdAndUpdate(req.params.id,{ $push: { remarks: comment._id } },
             (err, updateComment) => {
                 if (err) return next(err);
                 res.redirect("/events/" + req.params.id);
@@ -105,12 +101,5 @@ router.post('/:id/remarks', (req, res, next) => {
         )
     })
 })
-
-
-
-
-
-
-
 
 module.exports = router;

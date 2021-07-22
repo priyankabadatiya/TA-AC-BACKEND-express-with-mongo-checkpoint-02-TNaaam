@@ -18,8 +18,6 @@
         <a href="/" class="logo">Event House</a>
         <nav>
           <ul class="flex">
-            <li><a href="/events/home">Home</a></li>
-            <li><a href="/events/about">About</a></li>
             <li><a href="/events/new">Add Event</a></li>
             <li><a href="/events">Event List</a></li>
           </ul>
@@ -75,12 +73,13 @@
                 <% singleEvent.remarks.forEach(element=> { %>
                     <div class="comment-card flex justify-between-flex align-center">
                         <div class="">
-                            <h4><%= element.name%></h4>
+                            <h4><%= element.author%></h4>
                             <p><%= element.title %></p>
                             <div>
                                 <h3 class="ternary-heading">Likes</h3>
                                 <p><%= element.likes ? element.likes : 0%></p>
                                 <a href="/remarks/<%= element._id%>/commentlike"><i class="far fa-thumbs-up"></i></a>
+                                <a href="/remarks/<%= element._id%>/commentDislike"><i class="far fa-thumbs-down"></i></a>
                             </div>
                         </div>
                       <div>
